@@ -1,0 +1,520 @@
+@import "tailwindcss";
+
+/* Custom animations for card flipping */
+.card-container {
+  perspective: 1000px;
+}
+
+.card-flip {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-flip.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card-container {
+    perspective: 800px;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: transform 0.3s ease;
+}
+
+/* Knight Animation Keyframes */
+@keyframes walkRight {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px));
+  }
+}
+
+@keyframes walkLeft {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(calc(-100vw - 100px));
+  }
+}
+
+@keyframes walkUp {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(calc(-100vh - 100px));
+  }
+}
+
+@keyframes walkDown {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px));
+  }
+}
+
+@keyframes walkDiagonal {
+  0% {
+    transform: translate(-100px, 100px);
+  }
+  100% {
+    transform: translate(calc(100vw + 100px), calc(-100vh - 100px));
+  }
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes walkRightSlow {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px));
+  }
+}
+
+@keyframes walkLeftSlow {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(calc(-100vw - 100px));
+  }
+}
+
+@keyframes walkUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
+@keyframes knightRun {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(calc(25vw - 50px));
+  }
+  50% {
+    transform: translateX(calc(50vw - 100px));
+  }
+  75% {
+    transform: translateX(calc(75vw - 150px));
+  }
+  100% {
+    transform: translateX(calc(100vw - 200px));
+  }
+}
+
+@keyframes dragonChase {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(calc(25vw - 50px));
+  }
+  50% {
+    transform: translateX(calc(50vw - 100px));
+  }
+  75% {
+    transform: translateX(calc(75vw - 150px));
+  }
+  100% {
+    transform: translateX(calc(100vw - 200px));
+  }
+}
+
+@keyframes knightEscape {
+  0% {
+    transform: translateX(0px);
+  }
+  20% {
+    transform: translateX(calc(20vw - 40px));
+  }
+  40% {
+    transform: translateX(calc(40vw - 80px));
+  }
+  60% {
+    transform: translateX(calc(60vw - 120px));
+  }
+  80% {
+    transform: translateX(calc(80vw - 160px));
+  }
+  100% {
+    transform: translateX(calc(100vw - 200px));
+  }
+}
+
+@keyframes dragonFollow {
+  0% {
+    transform: translateX(0px);
+  }
+  20% {
+    transform: translateX(calc(20vw - 40px));
+  }
+  40% {
+    transform: translateX(calc(40vw - 80px));
+  }
+  60% {
+    transform: translateX(calc(60vw - 120px));
+  }
+  80% {
+    transform: translateX(calc(80vw - 160px));
+  }
+  100% {
+    transform: translateX(calc(100vw - 200px));
+  }
+}
+
+@keyframes wizardCast {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-20px) scale(1.2);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
+  75% {
+    transform: translateY(-15px) scale(1.15);
+  }
+}
+
+@keyframes princessWave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes bounceFast {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Knight Animation Classes */
+.animate-walk-right {
+  animation: walkRight 15s linear infinite;
+}
+
+.animate-walk-left {
+  animation: walkLeft 18s linear infinite;
+}
+
+.animate-walk-up {
+  animation: walkUp 20s linear infinite;
+}
+
+.animate-walk-down {
+  animation: walkDown 16s linear infinite;
+}
+
+.animate-walk-diagonal {
+  animation: walkDiagonal 25s linear infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 10s linear infinite;
+}
+
+.animate-walk-right-slow {
+  animation: walkRightSlow 25s linear infinite;
+}
+
+.animate-walk-left-slow {
+  animation: walkLeftSlow 22s linear infinite;
+}
+
+.animate-walk-up-down {
+  animation: walkUpDown 4s ease-in-out infinite;
+}
+
+.animate-knight-run {
+  animation: knightRun 8s linear infinite;
+}
+
+.animate-dragon-chase {
+  animation: dragonChase 6s linear infinite;
+}
+
+.animate-knight-escape {
+  animation: knightEscape 6s linear infinite;
+}
+
+.animate-dragon-follow {
+  animation: dragonFollow 8s linear infinite;
+}
+
+@keyframes fireSpit {
+  0% {
+    transform: translateX(0px) scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-20px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-40px) scale(0.6);
+    opacity: 0.4;
+  }
+}
+
+.animate-fire-spit {
+  animation: fireSpit 0.8s ease-out infinite;
+}
+
+@keyframes knightDamage {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(2px 2px 4px rgba(255, 215, 0, 0.5));
+  }
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+    filter: drop-shadow(2px 2px 4px rgba(255, 0, 0, 0.8));
+  }
+  50% {
+    transform: scale(0.9) rotate(5deg);
+    filter: drop-shadow(2px 2px 4px rgba(255, 0, 0, 0.8));
+  }
+  75% {
+    transform: scale(1.05) rotate(-3deg);
+    filter: drop-shadow(2px 2px 4px rgba(255, 0, 0, 0.8));
+  }
+}
+
+@keyframes funnyEffect {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  20% {
+    transform: scale(1.3) rotate(10deg);
+  }
+  40% {
+    transform: scale(0.8) rotate(-15deg);
+  }
+  60% {
+    transform: scale(1.2) rotate(20deg);
+  }
+  80% {
+    transform: scale(0.9) rotate(-10deg);
+  }
+}
+
+@keyframes speedBoost {
+  0%, 100% {
+    filter: drop-shadow(2px 2px 4px rgba(255, 215, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(0, 255, 0, 0.8)) drop-shadow(2px 2px 4px rgba(255, 215, 0, 0.5));
+  }
+}
+
+.animate-knight-damage {
+  animation: knightDamage 0.3s ease-in-out infinite;
+}
+
+.animate-funny-effect {
+  animation: funnyEffect 0.2s ease-in-out infinite;
+}
+
+.animate-speed-boost {
+  animation: speedBoost 0.5s ease-in-out infinite;
+}
+
+.animate-wizard-cast {
+  animation: wizardCast 1s ease-in-out infinite;
+}
+
+.animate-princess-wave {
+  animation: princessWave 0.5s ease-in-out infinite;
+}
+
+.animate-bounce-fast {
+  animation: bounceFast 0.8s ease-in-out infinite;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Princess Idle Animation */
+@keyframes princessIdle {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-3px) scale(1.02);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.05);
+  }
+  75% {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+.animate-princess-idle {
+  animation: princessIdle 4s ease-in-out infinite;
+}
+
+/* Dragon Idle Animation */
+@keyframes dragonIdle {
+  0%, 100% {
+    transform: scaleX(-1) translateY(0px) scale(1);
+  }
+  20% {
+    transform: scaleX(-1) translateY(-2px) scale(1.01);
+  }
+  40% {
+    transform: scaleX(-1) translateY(-4px) scale(1.03);
+  }
+  60% {
+    transform: scaleX(-1) translateY(-2px) scale(1.01);
+  }
+  80% {
+    transform: scaleX(-1) translateY(-1px) scale(1.005);
+  }
+}
+
+.animate-dragon-idle {
+  animation: dragonIdle 3s ease-in-out infinite;
+}
+
+/* Floating particles animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px) scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px) scale(0.6);
+    opacity: 0;
+  }
+}
+
+.animate-float-up {
+  animation: floatUp 3s ease-out infinite;
+}
