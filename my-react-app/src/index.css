@@ -43,6 +43,11 @@
   .card-back {
     transform: rotateY(180deg);
   }
+  
+  /* Fix mirrored text on card back - counter-rotate the content */
+  .card-back > div {
+    transform: rotateY(180deg);
+  }
 }
 
 .card-back {
