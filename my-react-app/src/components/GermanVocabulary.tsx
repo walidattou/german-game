@@ -231,3 +231,4 @@ const GermanVocabulary: React.FC = () => {
 };
 
 export default GermanVocabulary;
+

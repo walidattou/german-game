@@ -13,3 +13,4 @@ print(f"Total words: {len(df)}")
 print(f"Columns: {list(df.columns)}")
 print("\nFirst 10 rows:")
 print(df.head(10))
+
