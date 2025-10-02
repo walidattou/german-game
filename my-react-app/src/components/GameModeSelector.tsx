@@ -9,7 +9,7 @@ const GameModeSelector: React.FC<GameModeSelectorProps> = ({ onSelectMode }) => 
   const [knightDirection, setKnightDirection] = useState({ x: 2, y: 1 });
   const [dragonPosition, setDragonPosition] = useState({ x: 100, y: 150 });
   const [isSpittingFire, setIsSpittingFire] = useState(false);
-  const [collisionCount, setCollisionCount] = useState(0);
+  const [, setCollisionCount] = useState(0);
   const [knightDamage, setKnightDamage] = useState(false);
   const [knightSpeedBoost, setKnightSpeedBoost] = useState(1);
   const [funnyEffect, setFunnyEffect] = useState(false);

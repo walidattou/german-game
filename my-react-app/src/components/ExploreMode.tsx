@@ -75,22 +75,6 @@ const ExploreMode: React.FC<ExploreModeProps> = ({ onBack }) => {
     setIsFlipped(false);
   };
 
-  const getCategoryColor = (category: string) => {
-    const colors: { [key: string]: string } = {
-      'Article': 'bg-blue-100 text-blue-800',
-      'Noun': 'bg-green-100 text-green-800',
-      'Verb': 'bg-red-100 text-red-800',
-      'Adjective': 'bg-purple-100 text-purple-800',
-      'Adverb': 'bg-yellow-100 text-yellow-800',
-      'Preposition': 'bg-indigo-100 text-indigo-800',
-      'Conjunction': 'bg-pink-100 text-pink-800',
-      'Pronoun': 'bg-orange-100 text-orange-800',
-      'Number': 'bg-gray-100 text-gray-800',
-      'Reflexive': 'bg-teal-100 text-teal-800'
-    };
-    return colors[category] || 'bg-gray-100 text-gray-800';
-  };
-
   const nextCard = () => {
     if (currentIndex < filteredWords.length - 1) {
       setCurrentIndex(currentIndex + 1);

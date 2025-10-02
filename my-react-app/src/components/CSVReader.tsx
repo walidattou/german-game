@@ -28,7 +28,6 @@ const CSVReader: React.FC = () => {
       
       // Parse CSV
       const lines = csvText.split('\n');
-      const headers = lines[0].split(',');
       const data: GermanWord[] = [];
       
       for (let i = 1; i < lines.length; i++) {
